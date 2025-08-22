@@ -5,6 +5,13 @@ import java.time.LocalDateTime
 import kotlin.time.Duration
 import kotlin.time.toKotlinDuration
 
+data class Inscripcion(
+    val usuario: Usuario,
+    val evento: Evento,
+    val horaInscripcion: LocalDateTime,
+    val espera: Duration?,
+)
+
 data class Espera(
     val usuario: Usuario,
     val evento: Evento,

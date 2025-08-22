@@ -5,6 +5,11 @@ import kotlin.time.Duration
 import java.time.LocalDate
 import java.time.LocalDateTime
 
+enum class Categoria {
+    FIESTA,
+    CONCIERTO,
+}
+
 class Evento(
     val organizador: Usuario,
     val titulo: String,
@@ -15,6 +20,7 @@ class Evento(
     val cupoMaximo: Int,
     val cupoMinimio: Int?,
     val precio: Float,
+    val categorias: List<Categoria>,
 ) {
     val inscriptos: MutableSet<Inscripcion> = HashSet()
     val enEspera: ArrayDeque<Espera> = ArrayDeque()
