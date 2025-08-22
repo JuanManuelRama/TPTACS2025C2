@@ -5,6 +5,7 @@ import evento.Evento
 class Usuario(val nombre: String) {
     val inscripciones: MutableSet<Evento> = HashSet()
     val esperas: MutableSet<Evento> = HashSet()
+    val eventosOrganizados: MutableSet<Evento> = HashSet()
 
     fun addInscripcion(evento: Evento): Result<Unit> = add(evento, inscripciones)
 

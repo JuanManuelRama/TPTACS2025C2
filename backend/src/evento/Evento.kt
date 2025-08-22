@@ -9,7 +9,10 @@ enum class Categoria {
     FIESTA,
     CONCIERTO,
 }
-
+/**
+ * @constructor Al instanciar esta clase se registra automáticamente la creación
+ * del evento en el log del sistema y se inicializan los contadores internos.
+ * */
 class Evento(
     val organizador: Usuario,
     val titulo: String,
@@ -27,6 +30,10 @@ class Evento(
     var cantEspera: Int = 0
     var cantEsperaExitosas: Int = 0
     var cantEsperaCancelada: Int = 0
+
+    init {
+        organizador.eventosOrganizados.add(this)
+    }
 
     fun isFull(): Boolean = inscriptos.size == cupoMaximo
 
