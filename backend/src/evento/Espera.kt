@@ -10,7 +10,6 @@ data class Espera(
     val evento: Evento,
     val horaInicio: LocalDateTime
 ) {
-    fun tiempoEsperando(): Duration {
-        return java.time.Duration.between(this.horaInicio, LocalDateTime.now()).toKotlinDuration()
-    }
+    fun tiempoEsperando(): Duration =
+        java.time.Duration.between(this.horaInicio, LocalDateTime.now()).toKotlinDuration()
 }
